@@ -1,7 +1,7 @@
 body {
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f0f0f0;
+    background-color:cornflowerblue;
 }
 
 h1 {
@@ -10,7 +10,7 @@ h1 {
 
 .tablero {
     display: grid;
-    grid-template-columns: repeat(3, 200px);
+    grid-template-columns: repeat(3, 100px);
     gap: 8px;
     justify-content: center;
     margin-top: 20px;

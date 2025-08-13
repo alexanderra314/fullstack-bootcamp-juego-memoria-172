@@ -2,6 +2,8 @@ const tablero = document.getElementById("tablero");
 const reiniciarBtn = document.getElementById("reiniciar");
 const contadorElement = document.getElementById("contador-movimientos");
 const sonidoExito = new Audio("mission-success-41211.mp3");
+const puntajeElement = document.getElementById("puntos-actuales");
+let sumarPuntaje = 0;
 
 let cartas = ["🍎", "🍌", "🍒", "🍎", "🍌", "🍒"];
 let primeraCarta = null;
@@ -14,9 +16,11 @@ function actualizarContador() {
 
 function iniciarJuego() {
     tablero.innerHTML = "";
+
     cartas = cartas.sort(() => 0.5 - Math.random());
      movimientos = 0;
     actualizarContador();
+    puntajeElement.textContent=0
 
     cartas.forEach((emoji) => {
         const carta = document.createElement("div");
@@ -97,18 +101,21 @@ function voltearCarta() {
         actualizarContador();
 
         if (primeraCarta.dataset.valor === this.dataset.valor) {
-            console.log("coincidencia")
             primeraCarta.classList.add('movimiento')
             this.classList.add('movimiento')
-             sonidoExito.play().catch(error => {
+            sonidoExito.play().catch(error => {
                 console.log("No se pudo reproducir el sonido:", error);
             });
             primeraCarta = null;
+            sumarPuntaje +=10;
+            puntajeElement.textContent=sumarPuntaje;
 
             verificarVictoria();
 
         } else {
             bloqueo = true;
+            sumarPuntaje -= 2;
+            puntajeElement.textContent=sumarPuntaje;
             setTimeout(() => {
                 primeraCarta.textContent = "";
                 this.textContent = "";
