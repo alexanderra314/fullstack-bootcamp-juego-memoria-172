@@ -10,15 +10,18 @@ h1 {
 
 .tablero {
     display: grid;
-    grid-template-columns: repeat(3, 100px);
-    gap: 10px;
+    grid-template-columns: repeat(3, 200px);
+    gap: 8px;
     justify-content: center;
     margin-top: 20px;
+    background: linear-gradient(135deg, #d5bdec 100%);
+    padding: 50px;
+    border-radius: 30px;
 }
 
 .carta {
-    width: 100px;
-    height: 100px;
+    width: 200px;
+    height: 200px;
     background-color: #2196f3;
     display: flex;
     align-items: center;
