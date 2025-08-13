@@ -9,7 +9,21 @@
 <body>
     <h1>Juego de Memoria</h1>
     <p>Encuentra las cartas iguales</p>
+    <div id="contador-movimientos">Movimientos: 0</div>
     <div class="tablero" id="tablero"></div>
+
+     <!-- Este es el Menu que selcciona la dificultad jhon -->
+     
+    <div class="menu-dificultad">
+        <h3>Selecciona la Dificultad:</h3>
+        <button onclick="seleccionarDificultad('facil')" class="btn-nivel"> Fácil</button>
+        <button onclick="seleccionarDificultad('dificil')" class="btn-nivel"> Difícil</button>
+        <button onclick="seleccionarDificultad('legendario')" class="btn-nivel">Legendario</button>
+    </div>
+    <!-- Aqui termina el menu de dificultad jhon-->
+     <div class="controles">
+        <button id="pausa">Pausa</button>
+    </div>
     <button id="reiniciar">Reiniciar</button>
 
     <script src="script.js"></script>
